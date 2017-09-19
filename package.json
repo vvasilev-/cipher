@@ -1,0 +1,8 @@
+{
+  "name": "cipher",
+  "version": "1.0.0",
+  "description": "A simple password check service built with Vue.js",
+  "main": "index.js",
+  "author": "Viktor Vasilev @vvasilev-",
+  "license": "MIT"
+}
