@@ -5,6 +5,11 @@
   "main": "index.js",
   "author": "Viktor Vasilev @vvasilev-",
   "license": "MIT",
+  "scripts": {
+    "watch": "webpack-dev-server --env development",
+    "dev": "webpack --env development",
+    "prod": "webpack --env production"
+  },
   "dependencies": {
     "vue": "^2.4.4",
     "vuex": "^2.4.0",
