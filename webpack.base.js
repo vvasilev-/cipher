@@ -76,6 +76,28 @@ module.exports = {
 	},
 
 	/**
+	 * Configure how modules are resolved.
+	 */
+	resolve: {
+		/**
+		 * Tell webpack what directories should be searched when resolving modules.
+		 */
+		modules: [
+			'src/js',
+			'node_modules'
+		],
+
+		/**
+		 * Automattically resolve certain extensions.
+		 */
+		extensions: [
+			'.js',
+			'.json',
+			'.vue'
+		]
+	},
+
+	/**
 	 * Customize the build process.
 	 */
 	plugins: [
