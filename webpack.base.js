@@ -2,6 +2,7 @@
  * The external dependencies.
  */
 const path = require('path');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
@@ -46,18 +47,6 @@ module.exports = {
 		 */
 		rules: [
 			/**
-			 * Enable Vue single components.
-			 */
-			{
-				test: /\.vue$/,
-				use: [
-					{
-						loader: 'vue-loader'
-					}
-				]
-			},
-
-			/**
 			 * Enable ES201* syntax in JavaScript files.
 			 */
 			{
@@ -71,6 +60,17 @@ module.exports = {
 						}
 					}
 				]
+			},
+
+			/**
+			 * Enable CSS syntax.
+			 */
+			{
+				test: /\.css$/,
+				use: ExtractTextWebpackPlugin.extract({
+					use: 'css-loader',
+					fallback: 'style-loader'
+				})
 			}
 		]
 	},
