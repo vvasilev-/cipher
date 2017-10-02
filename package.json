@@ -11,6 +11,7 @@
     "prod": "webpack --env production"
   },
   "dependencies": {
+    "tachyons": "^4.8.1",
     "vue": "^2.4.4",
     "vuex": "^2.4.0",
     "zxcvbn": "^4.4.2"
