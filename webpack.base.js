@@ -20,7 +20,7 @@ module.exports = {
 	 * The point at which the application starts executing.
 	 */
 	entry: [
-		'../node_modules/tachyons/css/tachyons.css',
+		'./css/main.css',
 		'./js/main.js'
 	],
 
