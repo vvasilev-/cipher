@@ -1,6 +1,8 @@
 <template lang="html">
 	<header class="pv4 flex flex-row items-center justify-start">
 		<the-header-logo></the-header-logo>
+
+		<the-header-nav></the-header-nav>
 	</header>
 </template>
 
@@ -9,6 +11,7 @@
 	 * The internal dependencies.
 	 */
 	import TheHeaderLogo from 'components/the-header-logo';
+	import TheHeaderNav from 'components/the-header-nav';
 
 	export default {
 		/**
@@ -24,7 +27,8 @@
 		 * @type {Object}
 		 */
 		components: {
-			TheHeaderLogo
+			TheHeaderLogo,
+			TheHeaderNav
 		}
 	}
 </script>
