@@ -4,6 +4,8 @@
 			<the-header></the-header>
 
 			<password-input></password-input>
+
+			<password-meter></password-meter>
 		</div>
 	</div>
 </template>
@@ -14,6 +16,7 @@
 	 */
 	import TheHeader from 'components/the-header';
 	import PasswordInput from 'components/password-input';
+	import PasswordMeter from 'components/password-meter';
 
 	export default {
 		/**
@@ -30,7 +33,8 @@
 		 */
 		components: {
 			TheHeader,
-			PasswordInput
+			PasswordInput,
+			PasswordMeter
 		}
 	}
 </script>
