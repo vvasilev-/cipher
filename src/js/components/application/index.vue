@@ -2,6 +2,8 @@
 	<div class="min-vh-100 bg-near-white archivo">
 		<div class="w-90 w-70-m w-50-l center">
 			<the-header></the-header>
+
+			<password-input></password-input>
 		</div>
 	</div>
 </template>
@@ -11,6 +13,7 @@
 	 * The internal dependencies.
 	 */
 	import TheHeader from 'components/the-header';
+	import PasswordInput from 'components/password-input';
 
 	export default {
 		/**
@@ -26,7 +29,8 @@
 		 * @type {Object}
 		 */
 		components: {
-			TheHeader
+			TheHeader,
+			PasswordInput
 		}
 	}
 </script>
