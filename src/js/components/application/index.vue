@@ -7,7 +7,7 @@
 				:value="password"
 				:onChange="setPassword" />
 
-			<password-meter></password-meter>
+			<password-meter :score="score" />
 		</div>
 	</div>
 </template>
@@ -54,7 +54,8 @@
 			 * Map the store's state.
 			 */
 			...mapGetters('password', {
-				'password': 'getPassword'
+				'password': 'getPassword',
+				'score': 'getScore'
 			})
 		},
 

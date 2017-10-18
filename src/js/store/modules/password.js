@@ -1,4 +1,9 @@
 /**
+ * The external dependencies.
+ */
+import zxcvbn from 'zxcvbn';
+
+/**
  * Set the module as namespaced.
  *
  * @type {Boolean}
@@ -19,6 +24,7 @@ const RESET = 'reset';
  * @type {Object}
  */
 export const state = {
+	score: -1,
 	value: ''
 };
 
@@ -29,7 +35,16 @@ export const state = {
  */
 export const actions = {
 	setPassword({ commit }, value) {
-		commit(SET, value);
+		if (value) {
+			const { score } = zxcvbn(value);
+
+			commit(SET, {
+				score,
+				value
+			});
+		} else {
+			commit(RESET);
+		}
 	},
 
 	resetPassword({ commit }) {
@@ -43,12 +58,14 @@ export const actions = {
  * @type {Object}
  */
 export const mutations = {
-	[SET](state, value) {
+	[SET](state, { score, value }) {
+		state.score = score;
 		state.value = value;
 	},
 
 	[RESET](state) {
 		state.value = '';
+		state.score = -1;
 	}
 };
 
@@ -58,5 +75,6 @@ export const mutations = {
  * @type {Object}
  */
 export const getters = {
-	getPassword: ({ value }) => value
+	getPassword: ({ value }) => value,
+	getScore: ({ score }) => score
 };
