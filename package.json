@@ -11,6 +11,7 @@
     "prod": "webpack --env production"
   },
   "dependencies": {
+    "date-fns": "^2.0.0-alpha.7",
     "feather-icons": "^3.2.2",
     "tachyons": "^4.8.1",
     "vue": "^2.4.4",

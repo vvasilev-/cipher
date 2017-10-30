@@ -2,6 +2,24 @@
  * The external dependencies.
  */
 import zxcvbn from 'zxcvbn';
+import { addSeconds, formatDistanceStrict } from 'date-fns';
+
+/**
+ * The `date-fns` package will start to return
+ * "Invalid Date" when the seconds are bigger than
+ * the value specified below.
+ *
+ * @type {Number}
+ */
+const MAX_ALLOWED_SECONDS = 1e12;
+
+/**
+ * The distance after which we don't care
+ * about the actual value.
+ *
+ * @type {Number}
+ */
+const MAX_DISTANCE_IN_YEARS = 30000;
 
 /**
  * Set the module as namespaced.
@@ -24,6 +42,7 @@ const RESET = 'reset';
  * @type {Object}
  */
 export const state = {
+	crackTime: 0,
 	score: -1,
 	value: ''
 };
@@ -36,9 +55,16 @@ export const state = {
 export const actions = {
 	setPassword({ commit }, value) {
 		if (value) {
-			const { score } = zxcvbn(value);
+			const {
+				score,
+				crack_times_seconds: {
+					online_no_throttling_10_per_second: crackTime
+				},
+				crack_times_display
+			} = zxcvbn(value);
 
 			commit(SET, {
+				crackTime,
 				score,
 				value
 			});
@@ -58,14 +84,16 @@ export const actions = {
  * @type {Object}
  */
 export const mutations = {
-	[SET](state, { score, value }) {
+	[SET](state, { crackTime, score, value }) {
+		state.crackTime = crackTime;
 		state.score = score;
 		state.value = value;
 	},
 
 	[RESET](state) {
-		state.value = '';
+		state.crackTime = 0;
 		state.score = -1;
+		state.value = '';
 	}
 };
 
@@ -76,5 +104,15 @@ export const mutations = {
  */
 export const getters = {
 	getPassword: ({ value }) => value,
-	getScore: ({ score }) => score
+	getScore: ({ score }) => score,
+	getCrackTimeAsDistance: ({ crackTime }) => {
+		if (crackTime >= MAX_ALLOWED_SECONDS) {
+			return `${MAX_DISTANCE_IN_YEARS}+ years`;
+		}
+
+		const now = new Date;
+		const future = addSeconds(now, crackTime);
+
+		return formatDistanceStrict(now, future);
+	}
 };
