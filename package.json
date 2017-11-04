@@ -12,6 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "date-fns": "^2.0.0-alpha.7",
     "feather-icons": "^3.2.2",
     "tachyons": "^4.8.1",
