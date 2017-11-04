@@ -1,16 +1,21 @@
 <template>
-	<div class="mt4">
+	<div class="mt4" v-show="isVisible">
 		<time-estimator-separator />
 
 		<time-estimator-headline />
 
-		<time-estimator-digits />
+		<time-estimator-digits :value="digits" />
 
-		<time-estimator-units />
+		<time-estimator-units :value="units" />
 	</div>
 </template>
 
 <script>
+	/**
+	 * The external dependencies.
+	 */
+	import { mapGetters } from 'vuex';
+
 	/**
 	 * The internal dependencies.
 	 */
@@ -37,6 +42,57 @@
 			TimeEstimatorHeadline,
 			TimeEstimatorDigits,
 			TimeEstimatorUnits
+		},
+
+		/**
+		 * The computed properties.
+		 *
+		 * @type {Object}
+		 */
+		computed: {
+			/**
+			 * Map the store's state.
+			 */
+			...mapGetters('password', {
+				'time': 'getCrackTime',
+				'distance': 'getCrackTimeAsDistance'
+			}),
+
+			/**
+			 * Get the digits & units from the distance.
+			 *
+			 * @return {String[]}
+			 */
+			distanceChunks() {
+				return this.distance.split(' ');
+			},
+
+			/**
+			 * Extract the digits from the distance.
+			 *
+			 * @return {String}
+			 */
+			digits() {
+				return this.distanceChunks[0];
+			},
+
+			/**
+			 * Extract the units from the distance.
+			 *
+			 * @return {String}
+			 */
+			units() {
+				return this.distanceChunks[1];
+			},
+
+			/**
+			 * Check whether the estimator should be visible.
+			 *
+			 * @return {Boolean}
+			 */
+			isVisible() {
+				return this.time > 0;
+			}
 		}
 	}
 </script>

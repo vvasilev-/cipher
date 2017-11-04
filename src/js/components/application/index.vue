@@ -8,6 +8,8 @@
 				:onChange="setPassword" />
 
 			<password-meter :score="score" />
+
+			<time-estimator />
 		</div>
 	</div>
 </template>
@@ -24,6 +26,7 @@
 	import TheHeader from 'components/the-header';
 	import PasswordInput from 'components/password-input';
 	import PasswordMeter from 'components/password-meter';
+	import TimeEstimator from 'components/time-estimator';
 
 	export default {
 		/**
@@ -41,7 +44,8 @@
 		components: {
 			TheHeader,
 			PasswordInput,
-			PasswordMeter
+			PasswordMeter,
+			TimeEstimator
 		},
 
 		/**

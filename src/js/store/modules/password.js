@@ -105,6 +105,7 @@ export const mutations = {
 export const getters = {
 	getPassword: ({ value }) => value,
 	getScore: ({ score }) => score,
+	getCrackTime: ({ crackTime }) => crackTime,
 	getCrackTimeAsDistance: ({ crackTime }) => {
 		if (crackTime >= MAX_ALLOWED_SECONDS) {
 			return `${MAX_DISTANCE_IN_YEARS}+ years`;
