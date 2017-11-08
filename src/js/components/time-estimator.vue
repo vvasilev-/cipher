@@ -1,13 +1,15 @@
 <template>
-	<div class="mt4" v-show="isVisible">
-		<time-estimator-separator />
+	<transition enter-active-class="animated fadeIn">
+		<div class="mt4" v-show="visible">
+			<time-estimator-separator />
 
-		<time-estimator-headline />
+			<time-estimator-headline />
 
-		<time-estimator-digits :value="digits" />
+			<time-estimator-digits :value="digits" />
 
-		<time-estimator-units :value="units" />
-	</div>
+			<time-estimator-units :value="units" />
+		</div>
+	</transition>
 </template>
 
 <script>
@@ -42,6 +44,17 @@
 			TimeEstimatorHeadline,
 			TimeEstimatorDigits,
 			TimeEstimatorUnits
+		},
+
+		/**
+		 * The local state.
+		 *
+		 * @return {Object}
+		 */
+		data() {
+			return {
+				visible: false
+			};
 		},
 
 		/**
@@ -83,16 +96,22 @@
 			 */
 			units() {
 				return this.distanceChunks[1];
-			},
-
-			/**
-			 * Check whether the estimator should be visible.
-			 *
-			 * @return {Boolean}
-			 */
-			isVisible() {
-				return this.time > 0;
 			}
+		},
+
+		/**
+		 * A lifecycle hook.
+		 *
+		 * @return {void}
+		 */
+		mounted() {
+			const unwatch = this.$watch('time', value => {
+				if (value > 0) {
+					this.visible = true;
+
+					unwatch();
+				}
+			});
 		}
 	}
 </script>
