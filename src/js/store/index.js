@@ -7,6 +7,7 @@ import Vuex from 'vuex';
 /**
  * The internal dependencies.
  */
+import * as ui from 'store/modules/ui';
 import * as password from 'store/modules/password';
 
 /**
@@ -19,6 +20,7 @@ Vue.use(Vuex);
  */
 export default new Vuex.Store({
 	modules: {
+		ui,
 		password
 	}
 });
