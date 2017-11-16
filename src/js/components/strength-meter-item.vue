@@ -9,7 +9,7 @@
 		 *
 		 * @type {String}
 		 */
-		name: 'PasswordMeterItem',
+		name: 'StrengthMeterItem',
 
 		/**
 		 * The exposed properties.

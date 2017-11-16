@@ -7,7 +7,7 @@
 				:value="password"
 				:onChange="setPassword" />
 
-			<password-meter :score="score" />
+			<strength-meter />
 
 			<time-estimator />
 		</div>
@@ -25,7 +25,7 @@
 	 */
 	import TheHeader from 'components/the-header';
 	import PasswordInput from 'components/password-input';
-	import PasswordMeter from 'components/password-meter';
+	import StrengthMeter from 'components/strength-meter';
 	import TimeEstimator from 'components/time-estimator';
 
 	export default {
@@ -44,7 +44,7 @@
 		components: {
 			TheHeader,
 			PasswordInput,
-			PasswordMeter,
+			StrengthMeter,
 			TimeEstimator
 		},
 
