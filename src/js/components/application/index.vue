@@ -10,6 +10,8 @@
 			<strength-meter />
 
 			<time-estimator />
+
+			<the-footer />
 		</div>
 	</div>
 </template>
@@ -24,6 +26,7 @@
 	 * The internal dependencies.
 	 */
 	import TheHeader from 'components/the-header';
+	import TheFooter from 'components/the-footer';
 	import PasswordInput from 'components/password-input';
 	import StrengthMeter from 'components/strength-meter';
 	import TimeEstimator from 'components/time-estimator';
@@ -43,6 +46,7 @@
 		 */
 		components: {
 			TheHeader,
+			TheFooter,
 			PasswordInput,
 			StrengthMeter,
 			TimeEstimator
