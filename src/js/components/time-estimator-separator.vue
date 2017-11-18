@@ -1,36 +1,20 @@
 <template>
-	<div class="w-70 center flex flex-row justify-center items-center">
+	<div class="w-50 center flex flex-row justify-center items-center">
 		<span class="flex-auto bt b--moon-gray"></span>
 
-		<icon
-			class="mh2 moon-gray"
-			name="clock" />
+		<slot />
 
 		<span class="flex-auto bt b--moon-gray"></span>
 	</div>
 </template>
 
 <script>
-	/**
-	 * The internal dependencies.
-	 */
-	import Icon from 'components/icon';
-
 	export default {
 		/**
 		 * The name.
 		 *
 		 * @type {String}
 		 */
-		name: 'TimeEstimatorSeparator',
-
-		/**
-		 * The local components.
-		 *
-		 * @type {Object}
-		 */
-		components: {
-			Icon
-		}
+		name: 'TimeEstimatorSeparator'
 	}
 </script>
