@@ -3,9 +3,7 @@
 		<div class="w-90 w-70-m w-50-l center">
 			<the-header />
 
-			<password-input
-				:value="password"
-				:onChange="setPassword" />
+			<password-input />
 
 			<strength-meter />
 
@@ -17,11 +15,6 @@
 </template>
 
 <script>
-	/**
-	 * The external dependencies.
-	 */
-	import { mapActions, mapGetters } from 'vuex';
-
 	/**
 	 * The internal dependencies.
 	 */
@@ -50,35 +43,6 @@
 			PasswordInput,
 			StrengthMeter,
 			TimeEstimator
-		},
-
-		/**
-		 * The computed properties.
-		 *
-		 * @type {Object}
-		 */
-		computed: {
-			/**
-			 * Map the store's state.
-			 */
-			...mapGetters('password', {
-				'password': 'getPassword',
-				'score': 'getScore'
-			})
-		},
-
-		/**
-		 * The public API.
-		 *
-		 * @type {Object}
-		 */
-		methods: {
-			/**
-			 * Map the store's actions.
-			 */
-			...mapActions('password', [
-				'setPassword'
-			])
 		}
 	}
 </script>
