@@ -2,7 +2,7 @@
 	<transition enter-active-class="animated fadeIn">
 		<div class="mt4" v-show="dirty">
 			<time-estimator-separator>
-				<icon
+				<base-icon
 					class="mh2 moon-gray"
 					name="clock" />
 			</time-estimator-separator>
@@ -27,7 +27,7 @@
 	/**
 	 * The internal dependencies.
 	 */
- 	import Icon from 'components/icon';
+ 	import BaseIcon from 'components/base-icon';
 	import TimeEstimatorSeparator from 'components/time-estimator-separator';
 	import TimeEstimatorHeadline from 'components/time-estimator-headline';
 	import TimeEstimatorDigits from 'components/time-estimator-digits';
@@ -47,7 +47,7 @@
 		 * @type {Object}
 		 */
 		components: {
-			Icon,
+			BaseIcon,
 			TimeEstimatorSeparator,
 			TimeEstimatorHeadline,
 			TimeEstimatorDigits,

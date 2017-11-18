@@ -1,7 +1,7 @@
 <template lang="html">
 	<footer class="mt4 tc">
 		<a href="#" class="dib light-silver no-underline mh2 dim">
-			<icon name="github" />
+			<base-icon name="github" />
 		</a>
 	</footer>
 </template>
@@ -10,7 +10,7 @@
 	/**
 	 * The internal dependencies.
 	 */
-	import Icon from 'components/icon';
+	import BaseIcon from 'components/base-icon';
 
 	export default {
 		/**
@@ -26,7 +26,7 @@
 		 * @type {Object}
 		 */
 		components: {
-			Icon
+			BaseIcon
 		}
 	}
 </script>
