@@ -1,6 +1,6 @@
 <template>
 	<transition enter-active-class="animated fadeIn">
-		<div class="mt4" v-show="visible">
+		<div class="mt4" v-show="dirty">
 			<time-estimator-separator />
 
 			<time-estimator-headline />
@@ -47,17 +47,6 @@
 		},
 
 		/**
-		 * The local state.
-		 *
-		 * @return {Object}
-		 */
-		data() {
-			return {
-				visible: false
-			};
-		},
-
-		/**
 		 * The computed properties.
 		 *
 		 * @type {Object}
@@ -69,6 +58,10 @@
 			...mapGetters('password', {
 				'time': 'getCrackTime',
 				'distance': 'getCrackTimeAsDistance'
+			}),
+
+			...mapGetters('ui', {
+				'dirty': 'isDirty'
 			}),
 
 			/**
@@ -97,21 +90,6 @@
 			units() {
 				return this.distanceChunks[1];
 			}
-		},
-
-		/**
-		 * A lifecycle hook.
-		 *
-		 * @return {void}
-		 */
-		mounted() {
-			const unwatch = this.$watch('time', value => {
-				if (value > 0) {
-					this.visible = true;
-
-					unwatch();
-				}
-			});
 		}
 	}
 </script>
