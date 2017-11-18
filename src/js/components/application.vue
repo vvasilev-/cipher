@@ -3,11 +3,13 @@
 		<div class="w-90 w-70-m w-50-l center">
 			<the-header />
 
-			<password-input />
+			<main>
+				<password-input />
 
-			<strength-meter />
+				<strength-meter />
 
-			<time-estimator />
+				<time-estimator />
+			</main>
 
 			<the-footer />
 		</div>
