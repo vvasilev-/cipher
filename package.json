@@ -16,8 +16,8 @@
     "date-fns": "^2.0.0-alpha.7",
     "feather-icons": "^3.2.2",
     "tachyons": "^4.8.1",
-    "vue": "^2.4.4",
-    "vuex": "^2.4.0",
+    "vue": "^2.5.11",
+    "vuex": "^2.5.0",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
@@ -30,12 +30,13 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^21.2.1",
-    "jest-vue": "^0.8.2",
     "style-loader": "^0.18.2",
-    "vue-loader": "^13.0.5",
+    "vue-jest": "^1.4.0",
+    "vue-loader": "^13.6.0",
+    "vue-server-renderer": "^2.5.11",
     "vue-style-loader": "^3.0.3",
-    "vue-template-compiler": "^2.4.4",
-    "vue-test-utils": "^1.0.0-beta.4",
+    "vue-template-compiler": "^2.5.11",
+    "vue-test-utils": "^1.0.0-beta.8",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
     "webpack-merge": "^4.1.0"
