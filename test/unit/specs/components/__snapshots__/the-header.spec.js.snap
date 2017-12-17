@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheHeader should render properly 1`] = `"<header data-server-rendered=\\"true\\" class=\\"pv4\\"><h1 class=\\"f2 tc ttu tracked ma0\\">Check your password</h1></header>"`;
