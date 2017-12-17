@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheFooter should render properly 1`] = `"<footer data-server-rendered=\\"true\\" class=\\"mt4 tc\\"><a href=\\"#\\" class=\\"dib light-silver no-underline mh2 dim\\"><!----></a></footer>"`;
