@@ -14,7 +14,7 @@
 		 *
 		 * @type {String}
 		 */
-		name: 'Icon',
+		name: 'BaseIcon',
 
 		/**
 		 * The exposed properties.
